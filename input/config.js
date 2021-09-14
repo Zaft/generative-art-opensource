@@ -2,55 +2,54 @@ const fs = require("fs");
 const width = 1000;
 const height = 1000;
 const dir = __dirname;
-const description = "This is an NFT made by the coolest generative code.";
-const baseImageUri = "https://hashlips/nft";
+const description = "This is an NFT test collection.";
+const baseImageUri = "https://test/nft";
 const startEditionFrom = 1;
 const endEditionAt = 10;
 const editionSize = 10;
 const raceWeights = [
   {
-    value: "skull",
+    value: "FunnyFace",
     from: 1,
     to: editionSize,
   },
 ];
 
 const races = {
-  skull: {
-    name: "Skull",
+  FunnyFace: {
+    name: "FunnyFace",
     layers: [
       {
         name: "Background",
         elements: [
           {
             id: 0,
-            name: "Light blue",
-            path: `${dir}/1-background/LightBlue.png`,
-            weight: 100,
+            name: "",
+            path: `${dir}/1-background/black.png`,
+            weight: 20,
           },
           {
             id: 1,
-            name: "Orange",
-            path: `${dir}/1-background/Orange.png`,
-            weight: 80,
-          },
-        ],
-        position: { x: 0, y: 0 },
-        size: { width: width, height: height },
-      },
-      {
-        name: "Suit",
-        elements: [
-          {
-            id: 0,
-            name: "Regular",
-            path: `${dir}/2-suit/Regular.png`,
-            weight: 100,
+            name: "blue",
+            path: `${dir}/1-background/blue.png`,
+            weight: 20,
           },
           {
-            id: 1,
-            name: "Orange",
-            path: `${dir}/2-suit/Orange.png`,
+            id: 2,
+            name: "green",
+            path: `${dir}/1-background/green.png`,
+            weight: 20,
+          },
+          {
+            id: 3,
+            name: "peach",
+            path: `${dir}/1-background/peach.png`,
+            weight: 20,
+          },
+          {
+            id: 4,
+            name: "red",
+            path: `${dir}/1-background/red.png`,
             weight: 20,
           },
         ],
@@ -58,82 +57,49 @@ const races = {
         size: { width: width, height: height },
       },
       {
-        name: "Shoulder",
+        name: "Face",
         elements: [
           {
             id: 0,
-            name: "LunaFlag",
-            path: `${dir}/3-shoulder/LunaFlag.png`,
+            name: "Regular",
+            path: `${dir}/2-face/face_white.png`,
+            weight: 100,
+          },
+        ],
+        position: { x: 0, y: 0 },
+        size: { width: width, height: height },
+      },
+      {
+        name: "Glasses",
+        elements: [
+          {
+            id: 0,
+            name: "black",
+            path: `${dir}/3-glasses/black.png`,
             weight: 100,
           },
           {
             id: 1,
-            name: "USA",
-            path: `${dir}/3-shoulder/USA.png`,
-            weight: 90,
-          },
-        ],
-        position: { x: 0, y: 0 },
-        size: { width: width, height: height },
-      },
-      {
-        name: "Pin",
-        elements: [
-          {
-            id: 0,
-            name: "Smiley",
-            path: `${dir}/4-pin/Smiley.png`,
-            weight: 100,
+            name: "star yellow",
+            path: `${dir}/3-glasses/star_yellow.png`,
+            weight: 65,
           },
           {
-            id: 1,
-            name: "LunaBluePin",
-            path: `${dir}/4-pin/LunaBluePin.png`,
-            weight: 90,
-          },
-        ],
-        position: { x: 0, y: 0 },
-        size: { width: width, height: height },
-      },
-      {
-        name: "Race",
-        elements: [
-          {
-            id: 0,
-            name: "Skull",
-            path: `${dir}/5-skin/Skull.png`,
-            weight: 100,
-          },
-        ],
-        position: { x: 0, y: 0 },
-        size: { width: width, height: height },
-      },
-      {
-        name: "Facial hair",
-        elements: [
-          {
-            id: 0,
-            name: "No facial hair",
-            path: `${dir}/6-facial-hair/NoFacialHair.png`,
-            weight: 100,
-          },
-        ],
-        position: { x: 0, y: 0 },
-        size: { width: width, height: height },
-      },
-      {
-        name: "Mask",
-        elements: [
-          {
-            id: 0,
-            name: "No mask",
-            path: `${dir}/7-mask/NoMask.png`,
-            weight: 100,
+            id: 2,
+            name: "star orange",
+            path: `${dir}/3-glasses/star_orange.png`,
+            weight: 45,
           },
           {
-            id: 1,
-            name: "Medical",
-            path: `${dir}/7-mask/mask.png`,
+            id: 3,
+            name: "star green",
+            path: `${dir}/3-glasses/star_green.png`,
+            weight: 25,
+          },
+          {
+            id: 4,
+            name: "pineapple",
+            path: `${dir}/3-glasses/pineapple.png`,
             weight: 5,
           },
         ],
@@ -141,45 +107,81 @@ const races = {
         size: { width: width, height: height },
       },
       {
-        name: "Hair",
+        name: "Hats",
         elements: [
           {
             id: 0,
-            name: "Blonde bun",
-            path: `${dir}/8-hair/BlondeBun.png`,
+            name: "Black",
+            path: `${dir}/4-hats/black.png`,
             weight: 100,
           },
           {
             id: 1,
-            name: "Pink",
-            path: `${dir}/8-hair/Pink.png`,
-            weight: 91,
+            name: "Brown",
+            path: `${dir}/4-hats/brown.png`,
+            weight: 90,
+          },
+          {
+            id: 2,
+            name: "Green",
+            path: `${dir}/4-hats/green.png`,
+            weight: 90,
+          },
+          {
+            id: 3,
+            name: "Santa Red",
+            path: `${dir}/4-hats/santa_red.png`,
+            weight: 35,
+          },
+          {
+            id: 4,
+            name: "Santa Green",
+            path: `${dir}/4-hats/santa_green.png`,
+            weight: 15,
+          },
+          {
+            id: 5,
+            name: "Santa Purple",
+            path: `${dir}/4-hats/santa_purple.png`,
+            weight: 5,
           },
         ],
         position: { x: 0, y: 0 },
         size: { width: width, height: height },
       },
+      // {
+      //   name: "Race",
+      //   elements: [
+      //     {
+      //       id: 0,
+      //       name: "Skull",
+      //       path: `${dir}/5-skin/Skull.png`,
+      //       weight: 100,
+      //     },
+      //   ],
+      //   position: { x: 0, y: 0 },
+      //   size: { width: width, height: height },
+      // },
       {
-        name: "Accessories",
+        name: "Mouth",
         elements: [
           {
             id: 0,
-            name: "No accessories",
-            path: `${dir}/9-accessories/NoAcc.png`,
-            weight: 100,
+            name: "Buck Teeth",
+            path: `${dir}/5-mouth/buck_teeth.png`,
+            weight: 40,
           },
-        ],
-        position: { x: 0, y: 0 },
-        size: { width: width, height: height },
-      },
-      {
-        name: "Headwear",
-        elements: [
           {
-            id: 0,
-            name: "Glass dome",
-            path: `${dir}/10-headwear/GlassDome.png`,
-            weight: 100,
+            id: 1,
+            name: "Sharp Teeth",
+            path: `${dir}/5-mouth/sharp_teeth.png`,
+            weight: 30,
+          },
+          {
+            id: 2,
+            name: "Tongue",
+            path: `${dir}/5-mouth/tongue.png`,
+            weight: 30,
           },
         ],
         position: { x: 0, y: 0 },

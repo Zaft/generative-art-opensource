@@ -47,13 +47,21 @@ const drawBackground = () => {
 const addMetadata = (_dna, _edition) => {
   let dateTime = Date.now();
   let tempMetadata = {
-    dna: _dna.join(""),
+    // dna: _dna.join(""),
+    // name: `#${_edition}`,
+    // description: description,
+    // image: `${baseImageUri}/${_edition}.png`,
+    // edition: _edition,
+    // date: dateTime,
+    // attributes: attributesList,
     name: `#${_edition}`,
-    description: description,
-    image: `${baseImageUri}/${_edition}.png`,
+    symbol: `#${_edition}`,
     edition: _edition,
-    date: dateTime,
-    attributes: attributesList,
+    uri: `${baseImageUri}/${_edition}.png`, // TODO Modify for defi
+    creators: [], // TODO Use pub key here
+    update_authority: "7J5UKZMmtA7VFXfkstPFTijUPTgNzn4gMr2GUjwdK4Nt", // pub key of metadata owner
+    primary_sale_happend: false,
+    seller_fee_basis_points: 0,
   };
   metadataList.push(tempMetadata);
   attributesList = [];
@@ -132,6 +140,13 @@ const createDna = (_races, _race) => {
 const writeMetaData = (_data) => {
   fs.writeFileSync("./output/_metadata.json", _data);
 };
+
+// const saveMetaDataSingleFile = (_editionCount) => {
+//   fs.writeFileSync(
+//     `./output/${_editionCount}.json`, 
+//     JSON.stringify(metadataList.find(meta => meta.edition == _editionCount)
+//   ));
+// };
 
 const saveMetaDataSingleFile = (_editionCount) => {
   fs.writeFileSync(
