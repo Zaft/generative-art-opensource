@@ -46,6 +46,7 @@ const drawBackground = () => {
 
 const addMetadata = (_dna, _edition) => {
   let dateTime = Date.now();
+  let edition = _edition;
   let tempMetadata = {
     // dna: _dna.join(""),
     // name: `#${_edition}`,
@@ -54,12 +55,15 @@ const addMetadata = (_dna, _edition) => {
     // edition: _edition,
     // date: dateTime,
     // attributes: attributesList,
-    name: `#${_edition}`,
-    symbol: `#${_edition}`,
-    edition: _edition,
-    uri: `${baseImageUri}/${_edition}.png`, // TODO Modify for defi
-    creators: [], // TODO Use pub key here
-    update_authority: "7J5UKZMmtA7VFXfkstPFTijUPTgNzn4gMr2GUjwdK4Nt", // pub key of metadata owner
+    name: `#${edition}`,
+    symbol: `#${edition}`,
+    edition: edition,
+    uri: `${baseImageUri}/${edition}.png`, // TODO Modify for defi
+    creators: [{
+      address: "GRujchyEL4kdDKKLLmdFQXXNwAo8a8RQtctWqbEJTRq2",
+      share: 100
+    }], // TODO Use pub key here
+    update_authority: "GRujchyEL4kdDKKLLmdFQXXNwAo8a8RQtctWqbEJTRq2", // pub key of metadata owner
     primary_sale_happend: false,
     seller_fee_basis_points: 0,
   };
@@ -149,9 +153,10 @@ const writeMetaData = (_data) => {
 // };
 
 const saveMetaDataSingleFile = (_editionCount) => {
+  var editionCount = _editionCount;
   fs.writeFileSync(
-    `./output/${_editionCount}.json`,
-    JSON.stringify(metadataList.find((meta) => meta.edition == _editionCount))
+    `./output/${editionCount}.json`,
+    JSON.stringify(metadataList.find((meta) => meta.edition == editionCount))
   );
 };
 
