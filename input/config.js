@@ -2,14 +2,14 @@ const fs = require("fs");
 const width = 1000;
 const height = 1000;
 const dir = __dirname;
-const description = "This is an NFT test collection.";
+const description = "This is an NF BEEs collection.";
 const baseImageUri = "https://github.com/Zaft/zaft.github.io";
 const startEditionFrom = 1;
 const endEditionAt = 10;
 const editionSize = 10;
 const raceWeights = [
   {
-    value: "FunnyFace",
+    value: "NFBEES",
     from: 1,
     to: editionSize,
   },
@@ -17,7 +17,7 @@ const raceWeights = [
 
 const races = {
   FunnyFace: {
-    name: "FunnyFace",
+    name: "NFBEES",
     layers: [
       {
         name: "Background",

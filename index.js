@@ -60,10 +60,10 @@ const addMetadata = (_dna, _edition) => {
     edition: edition,
     uri: `${baseImageUri}/${edition}.png`, // TODO Modify for defi
     creators: [{
-      address: "GRujchyEL4kdDKKLLmdFQXXNwAo8a8RQtctWqbEJTRq2",
+      address: "",
       share: 100
     }], // TODO Use pub key here
-    update_authority: "GRujchyEL4kdDKKLLmdFQXXNwAo8a8RQtctWqbEJTRq2", // pub key of metadata owner
+    update_authority: "", // pub key of metadata owner
     primary_sale_happend: false,
     seller_fee_basis_points: 0,
   };
