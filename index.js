@@ -180,7 +180,7 @@ const startCreating = async () => {
         elementArray.forEach((element) => {
           drawElement(element);
         });
-        signImage(`#${editionCount}`);
+        //signImage(`#${editionCount}`);
         saveImage(editionCount);
         addMetadata(newDna, editionCount);
         saveMetaDataSingleFile(editionCount);
