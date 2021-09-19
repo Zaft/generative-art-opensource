@@ -5,8 +5,8 @@ const dir = __dirname;
 const description = "This is an NF BEEs collection.";
 const baseImageUri = "https://github.com/Zaft/zaft.github.io";
 const startEditionFrom = 0;
-const endEditionAt = 9;
-const editionSize = 10;
+const endEditionAt = 499;
+const editionSize = 500;
 const raceWeights = [
   {
     value: "NFBEES",
@@ -330,61 +330,61 @@ const races = {
             id: 0,
             name: "Red",
             path: `${dir}/5-skin/RedSkin.png`,
-            weight: 1,
+            weight: 100,
           },
           {
             id: 1,
             name: "Orange",
             path: `${dir}/5-skin/OrangeSkin.png`,
-            weight: 1,
+            weight: 85,
           },
           {
             id: 2,
             name: "Blue",
             path: `${dir}/5-skin/BlueSkin.png`,
-            weight: 1,
+            weight: 75,
           },
           {
             id: 3,
             name: "Brown",
             path: `${dir}/5-skin/BrownSkin.png`,
-            weight: 1,
+            weight: 60,
           },
           {
             id: 4,
             name: "Grey",
             path: `${dir}/5-skin/GreySkin.png`,
-            weight: 1,
+            weight: 50,
           },
           {
             id: 5,
             name: "Alien",
             path: `${dir}/5-skin/AlienSkin.png`,
-            weight: 1,
+            weight: 40,
           },
           {
             id: 6,
             name: "Frozen",
             path: `${dir}/5-skin/Frozen.png`,
-            weight: 1,
+            weight: 30,
           },
           {
             id: 7,
             name: "Green Gradient",
             path: `${dir}/5-skin/GreenGradient.png`,
-            weight: 1,
+            weight: 20,
           },
           {
             id: 8,
             name: "Heat",
             path: `${dir}/5-skin/Heat.png`,
-            weight: 1,
+            weight:10,
           },
           {
             id: 9,
             name: "Zombie",
             path: `${dir}/5-skin/ZombieSkin.png`,
-            weight: 1,
+            weight: 5,
           },
         ],
         position: { x: 0, y: 0 },

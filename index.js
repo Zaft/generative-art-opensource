@@ -182,8 +182,8 @@ const startCreating = async () => {
         });
         //signImage(`#${editionCount}`);
         saveImage(editionCount);
-        addMetadata(newDna, editionCount);
-        saveMetaDataSingleFile(editionCount);
+        //addMetadata(newDna, editionCount);
+        //saveMetaDataSingleFile(editionCount);
         console.log(
           `Created edition: ${editionCount}, Race: ${race} with DNA: ${newDna}`
         );
