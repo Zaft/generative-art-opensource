@@ -55,9 +55,9 @@ const addMetadata = (_dna, _edition) => {
     // edition: _edition,
     // date: dateTime,
     // attributes: attributesList,
-    name: `FunnnyFace: ${edition}`,
+    name: `FunnnyFace #${edition}`,
     symbol: "FUNF",
-    description: "The Funnay Face super cool things",
+    description: `FunnnyFace #${edition}`,
     seller_fee_basis_points: 420,
     external_url: "https://zaft.github.io/",
     edition: `${edition}`,
@@ -75,16 +75,15 @@ const addMetadata = (_dna, _edition) => {
       }]
     },
     collection: {
-      "name": "funnyfaces",
-      "family": "Funny Faces on Solana"
+      name: "funnyfaces",
+      family: "Funny Faces on Solana"
     },
     image: `${baseImageUri}/${edition}.png`,
     //uri: `${baseImageUri}/${edition}.png`, // TODO Modify for defi
     update_authority: "4bV6M5WU1hvXTGM4KCFxFPk48BHkNPDuTggk9KvHtLPB", // pub key of metadata owner
-    primary_sale_happend: false
+    primary_sale_happend: false,
   };
   metadataList.push(tempMetadata);
-  //attributesList = [];
 };
 
 const addAttributes = (_element) => {
