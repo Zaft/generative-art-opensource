@@ -3,14 +3,14 @@ const width = 1000;
 const height = 1000;
 const dir = __dirname;
 const description = "This is an NFT test collection.";
-const baseImageUri = "https://github.com/Zaft/zaft.github.io";
-const startEditionFrom = 1;
-const endEditionAt = 10;
+const baseImageUri = "https://zaft.github.io";
+const startEditionFrom = 0;
+const endEditionAt = 9;
 const editionSize = 10;
 const raceWeights = [
   {
     value: "FunnyFace",
-    from: 1,
+    from: 0,
     to: editionSize,
   },
 ];

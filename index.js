@@ -55,20 +55,36 @@ const addMetadata = (_dna, _edition) => {
     // edition: _edition,
     // date: dateTime,
     // attributes: attributesList,
-    name: `#${edition}`,
-    symbol: `#${edition}`,
-    edition: edition,
-    uri: `${baseImageUri}/${edition}.png`, // TODO Modify for defi
-    creators: [{
-      address: "GRujchyEL4kdDKKLLmdFQXXNwAo8a8RQtctWqbEJTRq2",
-      share: 100
-    }], // TODO Use pub key here
-    update_authority: "GRujchyEL4kdDKKLLmdFQXXNwAo8a8RQtctWqbEJTRq2", // pub key of metadata owner
-    primary_sale_happend: false,
-    seller_fee_basis_points: 0,
+    name: `FunnnyFace: ${edition}`,
+    symbol: "FUNF",
+    description: "The Funnay Face super cool things",
+    seller_fee_basis_points: 420,
+    external_url: "https://zaft.github.io/",
+    edition: `${edition}`,
+    background_color:"",
+    attributes: attributesList,
+    properties:{
+      category:"image",
+      creators: [{
+        address: "4bV6M5WU1hvXTGM4KCFxFPk48BHkNPDuTggk9KvHtLPB",
+        share: 100
+      }], // TODO Use pub key here
+      files: [{
+        type: "image/png",
+        uri: `${baseImageUri}/${edition}.png`,
+      }]
+    },
+    collection: {
+      "name": "funnyfaces",
+      "family": "Funny Faces on Solana"
+    },
+    image: `${baseImageUri}/${edition}.png`,
+    //uri: `${baseImageUri}/${edition}.png`, // TODO Modify for defi
+    update_authority: "4bV6M5WU1hvXTGM4KCFxFPk48BHkNPDuTggk9KvHtLPB", // pub key of metadata owner
+    primary_sale_happend: false
   };
   metadataList.push(tempMetadata);
-  attributesList = [];
+  //attributesList = [];
 };
 
 const addAttributes = (_element) => {
@@ -180,7 +196,7 @@ const startCreating = async () => {
         elementArray.forEach((element) => {
           drawElement(element);
         });
-        signImage(`#${editionCount}`);
+        // signImage(`#${editionCount}`);
         saveImage(editionCount);
         addMetadata(newDna, editionCount);
         saveMetaDataSingleFile(editionCount);
